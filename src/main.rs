@@ -93,6 +93,19 @@ impl Keyboard {
         }
     }
 
+    // https://www.kaufmann.no/roland/dvorak/
+    pub fn programmer_dvorak() -> Keyboard {
+        Keyboard {
+            name: "programmer dvorak".into(),
+            rows: vec![
+                ";,.PYFGCRL".into(),
+                "AOEUIDHTNS".into(),
+                "'QJKXBMWVZ".into(),
+            ],
+        }
+    }
+
+    // https://colemak.com/
     pub fn colemak() -> Keyboard {
         Keyboard {
             name: "colemak".into(),
@@ -104,6 +117,19 @@ impl Keyboard {
         }
     }
 
+    // https://colemakmods.github.io/mod-dh/
+    pub fn colemak_mod_dh() -> Keyboard {
+        Keyboard {
+            name: "colemak mod-DH".into(),
+            rows: vec![
+                "QWFPBJLUY;".into(),
+                "ARSTGMNEIO".into(),
+                "ZXCDVKH,./".into(),
+            ],
+        }
+    }
+
+    // https://workmanlayout.org/
     pub fn workman() -> Keyboard {
         Keyboard {
             name: "workman".into(),
@@ -111,6 +137,42 @@ impl Keyboard {
                 "qdrwbjfup;".into(),
                 "ashtgyneoi".into(),
                 "zxmcvkl,./".into(),
+            ],
+        }
+    }
+
+    // https://normanlayout.info/
+    pub fn norman() -> Keyboard {
+        Keyboard {
+            name: "norman".into(),
+            rows: vec![
+                "QWDFKJURL;".into(),
+                "ASETGYNIOH".into(),
+                "ZXCVBPM,./".into(),
+            ],
+        }
+    }
+
+    // https://web.archive.org/web/20230412070423/http://mkweb.bcgsc.ca/carpalx/?full_optimization
+    pub fn carpalx_QFMLWY() -> Keyboard {
+        Keyboard {
+            name: "carpalx QFMLWY".into(),
+            rows: vec![
+                "QGMLWBYUV;".into(),
+                "DSTNRIAEOH".into(),
+                "ZXCFJKP,./".into(),
+            ],
+        }
+    }
+
+    // https://github.com/kaievns/halmak
+    pub fn halmak() -> Keyboard {
+        Keyboard {
+            name: "halmak".into(),
+            rows: vec![
+                "WLRBZ;QUDJ".into(),
+                "SHNT,.AEOI".into(),
+                "FMVC/GPXKY".into(),
             ],
         }
     }
@@ -687,8 +749,13 @@ fn main() {
     let standard_keyboards = vec![
         Keyboard::qwerty(),
         Keyboard::dvorak(),
+        Keyboard::programmer_dvorak(),
         Keyboard::colemak(),
+        Keyboard::colemak_mod_dh(),
         Keyboard::workman(),
+        Keyboard::norman(),
+        Keyboard::carpalx_QFMLWY(),
+        Keyboard::halmak(),
     ];
 
     // Show the score for the standard keyboards
