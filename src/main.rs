@@ -66,6 +66,7 @@ impl Display for Keyboard {
             for col in row {
                 let _ = f.write_char(*col as char);
             }
+            let _ = f.write_char('\n');
         }
         Ok(())
     }
@@ -710,6 +711,7 @@ fn main() {
         }
     }
 
+    println!("Sorting...");
     let single_byte: Vec<_> = single_byte
         .into_iter()
         .sorted_by(|a, b| Ord::cmp(&b.1, &a.1))
@@ -758,6 +760,7 @@ fn main() {
         Keyboard::halmak(),
     ];
 
+    println!("Scoring standard keyboards...");
     // Show the score for the standard keyboards
     // for this round of scoring
     let mut dictionary = HashMap::new();
@@ -782,6 +785,7 @@ fn main() {
     // let score = scorer.score_keyboard(&kb);
     // println!("{}|{}", score, kb);
 
+    println!("Finding a keyboard...");
     let (sender, receiver) = channel();
 
     for _ in 1..10 {
@@ -801,7 +805,7 @@ fn main() {
         let (score, kb) = receiver.recv().unwrap();
 
         if score > best {
-            println!("New best: {}|{}|{}", ALGORITHM_VERSION, score, kb);
+            println!("New best: {}|{}|\n{}", ALGORITHM_VERSION, score, kb);
             best = score;
         }
 
