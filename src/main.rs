@@ -805,7 +805,7 @@ fn main() {
         let (score, kb) = receiver.recv().unwrap();
 
         if score > best {
-            println!("New best: {}|{}|\n{}", ALGORITHM_VERSION, score, kb);
+            println!("\nNew best: {}|{}|\n{}", ALGORITHM_VERSION, score, kb);
             best = score;
         }
 
