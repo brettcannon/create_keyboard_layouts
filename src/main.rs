@@ -123,9 +123,9 @@ impl Keyboard {
         Keyboard {
             name: "colemak mod-DH".into(),
             rows: vec![
-                "QWFPBJLUY;".to_lowercase().into(),
-                "ARSTGMNEIO".to_lowercase().into(),
-                "ZXCDVKH,./".to_lowercase().into(),
+                "qwfpbjluy;".into(),
+                "arstgmneio".into(),
+                "zxcdvkh,./".into(),
             ],
         }
     }
