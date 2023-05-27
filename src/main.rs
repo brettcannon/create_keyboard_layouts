@@ -98,9 +98,9 @@ impl Keyboard {
         Keyboard {
             name: "programmer dvorak".into(),
             rows: vec![
-                ";,.PYFGCRL".into(),
-                "AOEUIDHTNS".into(),
-                "'QJKXBMWVZ".into(),
+                ";,.PYFGCRL".to_lowercase().into(),
+                "AOEUIDHTNS".to_lowercase().into(),
+                "'QJKXBMWVZ".to_lowercase().into(),
             ],
         }
     }
@@ -122,9 +122,9 @@ impl Keyboard {
         Keyboard {
             name: "colemak mod-DH".into(),
             rows: vec![
-                "QWFPBJLUY;".into(),
-                "ARSTGMNEIO".into(),
-                "ZXCDVKH,./".into(),
+                "QWFPBJLUY;".to_lowercase().into(),
+                "ARSTGMNEIO".to_lowercase().into(),
+                "ZXCDVKH,./".to_lowercase().into(),
             ],
         }
     }
@@ -146,21 +146,21 @@ impl Keyboard {
         Keyboard {
             name: "norman".into(),
             rows: vec![
-                "QWDFKJURL;".into(),
-                "ASETGYNIOH".into(),
-                "ZXCVBPM,./".into(),
+                "QWDFKJURL;".to_lowercase().into(),
+                "ASETGYNIOH".to_lowercase().into(),
+                "ZXCVBPM,./".to_lowercase().into(),
             ],
         }
     }
 
     // https://web.archive.org/web/20230412070423/http://mkweb.bcgsc.ca/carpalx/?full_optimization
-    pub fn carpalx_QFMLWY() -> Keyboard {
+    pub fn carpalx_qfmlwy() -> Keyboard {
         Keyboard {
             name: "carpalx QFMLWY".into(),
             rows: vec![
-                "QGMLWBYUV;".into(),
-                "DSTNRIAEOH".into(),
-                "ZXCFJKP,./".into(),
+                "QGMLWBYUV;".to_lowercase().into(),
+                "DSTNRIAEOH".to_lowercase().into(),
+                "ZXCFJKP,./".to_lowercase().into(),
             ],
         }
     }
@@ -170,9 +170,9 @@ impl Keyboard {
         Keyboard {
             name: "halmak".into(),
             rows: vec![
-                "WLRBZ;QUDJ".into(),
-                "SHNT,.AEOI".into(),
-                "FMVC/GPXKY".into(),
+                "WLRBZ;QUDJ".to_lowercase().into(),
+                "SHNT,.AEOI".to_lowercase().into(),
+                "FMVC/GPXKY".to_lowercase().into(),
             ],
         }
     }
