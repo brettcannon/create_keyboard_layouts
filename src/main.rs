@@ -754,7 +754,7 @@ fn main() {
         Keyboard::colemak_mod_dh(),
         Keyboard::workman(),
         Keyboard::norman(),
-        Keyboard::carpalx_QFMLWY(),
+        Keyboard::carpalx_qfmlwy(),
         Keyboard::halmak(),
     ];
 
