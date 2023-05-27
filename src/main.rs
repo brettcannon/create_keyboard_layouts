@@ -661,7 +661,7 @@ fn main() {
     // Single byte counts
     let mut single_byte: HashMap<u8, i64> = HashMap::new();
     for a in input.iter() {
-        if (b'a'..=b'z').contains(a) {
+        if a.is_ascii_lowercase() {
             *single_byte.entry(*a).or_default() += 1;
         }
     }
@@ -670,7 +670,7 @@ fn main() {
     // Double byte counts
     let mut double_byte: HashMap<Vec<u8>, i64> = HashMap::new();
     for (a, b) in input.iter().tuple_windows() {
-        if (b'a'..=b'z').contains(a) && (b'a'..=b'z').contains(b) && a != b {
+        if a!=b && a.is_ascii_lowercase() && b.is_ascii_lowercase() {
             let item = vec![*a, *b];
             *double_byte.entry(item).or_default() += 1;
         }
@@ -680,9 +680,9 @@ fn main() {
     // Triple byte counts
     let mut triple_byte: HashMap<Vec<u8>, i64> = HashMap::new();
     for (a, b, c) in input.iter().tuple_windows() {
-        if (b'a'..=b'z').contains(a)
-            && (b'a'..=b'z').contains(b)
-            && (b'a'..=b'z').contains(c)
+        if a.is_ascii_lowercase()
+            && b.is_ascii_lowercase()
+            && c.is_ascii_lowercase()
             && ![b, c].contains(&a)
             && b != c
         {
@@ -696,10 +696,10 @@ fn main() {
     // Quadruple byte counts
     let mut quadruple_byte: HashMap<Vec<u8>, i64> = HashMap::new();
     for (a, b, c, d) in input.iter().tuple_windows() {
-        if (b'a'..=b'z').contains(a)
-            && (b'a'..=b'z').contains(b)
-            && (b'a'..=b'z').contains(c)
-            && (b'a'..=b'z').contains(d)
+        if a.is_ascii_lowercase()
+            && b.is_ascii_lowercase()
+            && c.is_ascii_lowercase()
+            && d.is_ascii_lowercase()
             && ![b, c, d].contains(&a)
             && ![c, d].contains(&b)
             && c != d
